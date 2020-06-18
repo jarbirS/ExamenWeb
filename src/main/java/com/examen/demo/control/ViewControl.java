@@ -57,6 +57,7 @@ public class ViewControl {
 
 		return "/visitante";
 	}
+
 	
 	@PostMapping("/registro/registroV")
 	public String visitanteRegistro(@ModelAttribute(value="visitante") Visitante visitante, RedirectAttributes r) {
@@ -86,5 +87,12 @@ public class ViewControl {
 			
 			accesoRepository.save(ingreso);
 			return "redirect:/";
+		}
+		
+		@GetMapping("/registro/codigoQR")
+		public String codigoQR(Model model) {
+			
+
+			return "/codigoQR";
 		}
 }
