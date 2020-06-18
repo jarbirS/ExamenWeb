@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head> 
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+
+		<!-- Website CSS style -->
+		<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+
+		<!-- Website Font style -->
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+		
+		<!-- Google Fonts -->
+		<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+		
+		<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        
+        <link href="/css/comunidad.css" rel="stylesheet">
+
+		<title>Visitante</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row main">
+				<div class="panel-heading">
+	               <div class="panel-title text-center">
+	               		<h1 class="title">Registro de Acceso</h1>
+	               		<hr />
+	               	</div>
+	            </div> 
+				<div class="main-login main-center">
+					<form class="form-horizontal" role="form" th:action="${enlace}" th:object="${ingreso}" method="post" >
+						
+
+						<div class="form-group">
+							<label for="nombre" class="cols-sm-2 control-label">Temperatura</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" th:field="*{temperatura}" name="temperatura" id="temperatura"  placeholder="temperatura"/>
+								</div>
+							</div>
+						</div>
+
+						
+						<div>
+			    			<select required th:field="*{visitante.id}">
+			    			<option value="0" disabled>Seleccione Visitante</option>
+			    			<option th:each=" vis: ${visitante}" th:value="${vis.id}" th:text="${vis.nombre}"> </option>
+			    	
+			    			
+			    			</select>
+			    			
+			    			</div>
+			    			
+			    			<br>
+						
+						<input type="submit" value="Register" class="btn btn-info btn-block">
+
+					
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="assets/js/bootstrap.js"></script>
+	</body>
+</html>
