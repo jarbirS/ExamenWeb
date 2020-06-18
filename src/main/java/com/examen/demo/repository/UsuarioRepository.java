@@ -1,5 +1,9 @@
 package com.examen.demo.repository;
 
-public interface UsuarioRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.examen.demo.entities.Usuario;
+
+public interface UsuarioRepository extends JpaRepository<Usuario, String> {
 
 }
